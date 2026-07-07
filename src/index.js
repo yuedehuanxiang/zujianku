@@ -1,6 +1,7 @@
 import ZkButton from './components/button';
+import ZkSwitch from './components/switch';
 
-const components = [ZkButton];
+const components = [ZkButton, ZkSwitch];
 
 const install = (Vue) => {
   if (install.installed) return;
@@ -14,7 +15,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { ZkButton };
+export { ZkButton, ZkSwitch };
 
 export default {
   install,

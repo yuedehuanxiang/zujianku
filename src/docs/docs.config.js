@@ -1,5 +1,7 @@
 import buttonMarkdown from './markdown/button.md?raw';
+import switchMarkdown from './markdown/switch.md?raw';
 import ButtonDemo from './demos/ButtonDemo.vue';
+import SwitchDemo from './demos/SwitchDemo.vue';
 
 export const sidebarGroups = [
   {
@@ -40,7 +42,15 @@ export const sidebarGroups = [
       { label: 'Cascader 级联选择' },
       { label: 'Checkbox 复选框' },
       { label: 'DatePicker 日期选择' },
-      { label: 'Field 输入框' }
+      { label: 'Field 输入框' },
+      {
+        key: 'switch',
+        label: 'Switch 开关',
+        title: 'Switch 开关',
+        previewTitle: 'Switch',
+        markdown: switchMarkdown,
+        demo: SwitchDemo
+      }
     ]
   }
 ];

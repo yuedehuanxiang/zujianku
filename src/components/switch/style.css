@@ -1,0 +1,77 @@
+.zk-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 2em;
+  min-width: 2em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #5b5f68;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zk-switch--on {
+  background: #07c160;
+}
+
+.zk-switch:focus-visible {
+  outline: 2px solid rgba(25, 137, 250, 0.45);
+  outline-offset: 3px;
+}
+
+.zk-switch__node {
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s ease;
+}
+
+.zk-switch--on .zk-switch__node {
+  transform: translateX(1em);
+}
+
+.zk-switch--disabled,
+.zk-switch--loading,
+.zk-switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.zk-switch__loading {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 0.46em;
+  height: 0.46em;
+  margin-top: -0.23em;
+  margin-left: -0.23em;
+  border: 0.08em solid #8b8f98;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: zk-switch-spin 0.75s linear infinite;
+}
+
+.zk-switch--on .zk-switch__loading {
+  border-color: #07c160;
+  border-right-color: transparent;
+}
+
+@keyframes zk-switch-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
