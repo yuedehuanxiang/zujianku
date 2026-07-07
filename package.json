@@ -1,0 +1,37 @@
+{
+  "name": "zujianku",
+  "version": "0.1.0",
+  "description": "A Vue 2 mobile component library with a markdown-powered docs site.",
+  "main": "dist/zujianku.umd.js",
+  "module": "dist/zujianku.es.js",
+  "style": "dist/style.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/zujianku.es.js",
+      "require": "./dist/zujianku.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build:docs": "vite build --outDir docs-dist",
+    "build:lib": "vite build --config vite.lib.config.js",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "markdown-it": "^14.1.0",
+    "vue": "^2.7.16",
+    "vue-feather-icons": "^5.1.0",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.3.3",
+    "vite": "^5.4.19",
+    "vue-template-compiler": "^2.7.16"
+  }
+}

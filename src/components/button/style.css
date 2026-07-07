@@ -1,0 +1,139 @@
+.zk-button {
+  --zk-button-color: #ffffff;
+  --zk-button-background: #323233;
+  --zk-button-border-color: #323233;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 44px;
+  margin: 0;
+  padding: 0 18px;
+  border: 1px solid var(--zk-button-border-color);
+  border-radius: 4px;
+  color: var(--zk-button-color);
+  background: var(--zk-button-background);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    opacity 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zk-button:active {
+  opacity: 0.82;
+}
+
+.zk-button:focus-visible {
+  outline: 2px solid rgba(25, 137, 250, 0.45);
+  outline-offset: 2px;
+}
+
+.zk-button--default {
+  --zk-button-color: #e7e8eb;
+  --zk-button-background: transparent;
+  --zk-button-border-color: #8b8d94;
+}
+
+.zk-button--primary {
+  --zk-button-background: #1989fa;
+  --zk-button-border-color: #1989fa;
+}
+
+.zk-button--success {
+  --zk-button-background: #07c160;
+  --zk-button-border-color: #07c160;
+}
+
+.zk-button--danger {
+  --zk-button-background: #ee0a24;
+  --zk-button-border-color: #ee0a24;
+}
+
+.zk-button--warning {
+  --zk-button-background: #ff976a;
+  --zk-button-border-color: #ff976a;
+}
+
+.zk-button--plain {
+  color: var(--zk-button-border-color);
+  background: transparent;
+}
+
+.zk-button--plain.zk-button--default {
+  color: #e7e8eb;
+}
+
+.zk-button--hairline {
+  border-width: 1px;
+  box-shadow: inset 0 0 0 0.5px var(--zk-button-border-color);
+}
+
+.zk-button--disabled,
+.zk-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.zk-button--loading {
+  cursor: not-allowed;
+}
+
+.zk-button--round {
+  border-radius: 999px;
+}
+
+.zk-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.zk-button--large {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+
+.zk-button--small {
+  height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.zk-button--mini {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.zk-button__loading {
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: zk-button-spin 0.75s linear infinite;
+}
+
+.zk-button__content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+@keyframes zk-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
