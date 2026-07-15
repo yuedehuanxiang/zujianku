@@ -1,6 +1,8 @@
 import buttonMarkdown from './markdown/button.md?raw';
+import dialogMarkdown from './markdown/dialog.md?raw';
 import switchMarkdown from './markdown/switch.md?raw';
 import ButtonDemo from './demos/ButtonDemo.vue';
+import DialogDemo from './demos/DialogDemo.vue';
 import SwitchDemo from './demos/SwitchDemo.vue';
 
 export const sidebarGroups = [
@@ -30,6 +32,14 @@ export const sidebarGroups = [
       { label: 'Image 图片' },
       { label: 'Layout 布局' },
       { label: 'Popup 弹出层' },
+      {
+        key: 'dialog',
+        label: 'Dialog 弹出框',
+        title: 'Dialog 弹出框',
+        previewTitle: 'Dialog',
+        markdown: dialogMarkdown,
+        demo: DialogDemo
+      },
       { label: 'Space 间距' },
       { label: 'Style 内置样式' },
       { label: 'Toast 轻提示' }

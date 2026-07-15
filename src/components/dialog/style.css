@@ -1,0 +1,192 @@
+.zk-dialog-wrapper {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.64);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zk-dialog-wrapper--transparent {
+  background: transparent;
+  pointer-events: none;
+}
+
+.zk-dialog-wrapper--transparent .zk-dialog {
+  pointer-events: auto;
+}
+
+.zk-dialog {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #f4f4f5;
+  background: #242529;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.42);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+  outline: none;
+}
+
+.zk-dialog:focus-visible {
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.42),
+    0 0 0 2px rgba(25, 137, 250, 0.45);
+}
+
+.zk-dialog__header {
+  padding: 25px 24px 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.zk-dialog__content {
+  max-height: min(52vh, 360px);
+  padding: 19px 24px 25px;
+  overflow-y: auto;
+  color: #c8cad0;
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.zk-dialog__header + .zk-dialog__content {
+  padding-top: 12px;
+}
+
+.zk-dialog__content--left {
+  text-align: left;
+}
+
+.zk-dialog__content--center {
+  text-align: center;
+}
+
+.zk-dialog__content--right {
+  text-align: right;
+}
+
+.zk-dialog__footer {
+  display: flex;
+  min-height: 52px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zk-dialog__button {
+  position: relative;
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 52px;
+  margin: 0;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 0;
+  color: #d9dae0;
+  background: transparent;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.18s ease, opacity 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.zk-dialog__button + .zk-dialog__button {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.zk-dialog__button:hover {
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.zk-dialog__button:active {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.zk-dialog__button:focus-visible {
+  z-index: 1;
+  outline: 2px solid rgba(25, 137, 250, 0.7);
+  outline-offset: -3px;
+}
+
+.zk-dialog__button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.zk-dialog__button--confirm {
+  color: #1989fa;
+}
+
+.zk-dialog__loading {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: zk-dialog-spin 0.75s linear infinite;
+}
+
+.zk-dialog-fade-enter-active {
+  transition: opacity 0.2s ease-out;
+}
+
+.zk-dialog-fade-leave-active {
+  transition: opacity 0.16s ease-in;
+}
+
+.zk-dialog-fade-enter-active .zk-dialog,
+.zk-dialog-fade-leave-active .zk-dialog {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.zk-dialog-fade-enter,
+.zk-dialog-fade-leave-to {
+  opacity: 0;
+}
+
+.zk-dialog-fade-enter .zk-dialog,
+.zk-dialog-fade-leave-to .zk-dialog {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes zk-dialog-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zk-dialog-fade-enter-active,
+  .zk-dialog-fade-leave-active,
+  .zk-dialog-fade-enter-active .zk-dialog,
+  .zk-dialog-fade-leave-active .zk-dialog {
+    transition-duration: 0.01ms;
+  }
+
+  .zk-dialog__loading {
+    animation-duration: 1.5s;
+  }
+}

@@ -25,6 +25,7 @@ src/
   index.js
   components/
     button/
+    dialog/
     switch/
   docs/
     App.vue
@@ -45,7 +46,8 @@ src/
 这里决定两件事：
 
 - `Vue.use(ZkUI)` 会全量注册哪些组件。
-- 外部是否可以通过 `import { ZkButton, ZkSwitch } from 'zujianku'` 按需使用组件。
+- 外部是否可以通过 `import { ZkButton, ZkDialog, ZkSwitch } from 'zujianku'` 按需使用组件。
+- Dialog 等命令式组件是否可以通过 `import { Dialog } from 'zujianku'` 函数调用。
 
 新增组件时，必须在这里引入、加入 `components` 数组，并导出。
 
