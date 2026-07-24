@@ -20,7 +20,7 @@
     "dev": "vite --host 127.0.0.1",
     "build:docs": "vite build --outDir docs-dist",
     "build:lib": "vite build --config vite.lib.config.js",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --outDir docs-dist --host 127.0.0.1"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",
